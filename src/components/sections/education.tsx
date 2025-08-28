@@ -56,7 +56,6 @@ export function EducationSection() {
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-muted-foreground">{edu.location}</span>
                     </div>
-                    <p className="text-muted-foreground">{edu.description}</p>
                     <div>
                       <p className="text-sm font-medium mb-2">Key Coursework:</p>
                       <div className="flex flex-wrap gap-1">
