@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { User } from "lucide-react"
+import { AnimatedSection } from "@/components/animated-section"
 
 const skills = [
   "JavaScript", "TypeScript", "Solidity", "Smart Contracts",
@@ -12,9 +13,9 @@ const skills = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-muted/50">
+    <AnimatedSection id="about" className="py-20 bg-muted/50" animation="fadeInUp">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <AnimatedSection className="text-center mb-12" animation="fadeInUp" delay={0.2}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <User className="inline-block w-8 h-8 mr-2" />
             About Me
@@ -22,10 +23,10 @@ export function AboutSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Get to know more about my background, skills, and what drives my passion for development.
           </p>
-        </div>
+        </AnimatedSection>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
+          <AnimatedSection className="space-y-6" animation="staggerFadeIn" delay={0.4} stagger={0.2}>
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4">My Story 📖</h3>
@@ -49,24 +50,29 @@ export function AboutSection() {
                 </p>
               </CardContent>
             </Card>
-          </div>
+          </AnimatedSection>
 
-          <div>
+          <AnimatedSection animation="fadeInRight" delay={0.6}>
             <Card>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-6">Skills & Technologies 🛠️</h3>
                 <div className="flex flex-wrap gap-2">
-                  {skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="text-sm">
+                  {skills.map((skill, index) => (
+                    <Badge 
+                      key={skill} 
+                      variant="secondary" 
+                      className="text-sm animate-pulse"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
                       {skill}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   )
 }

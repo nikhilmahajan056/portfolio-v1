@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Rocket } from "lucide-react"
+import { AnimatedSection } from "@/components/animated-section"
 
 const projects = [
   {
@@ -25,9 +26,9 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-muted/50">
+    <AnimatedSection id="projects" className="py-20 bg-muted/50" animation="fadeInUp">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <AnimatedSection className="text-center mb-12" animation="fadeInUp" delay={0.2}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <Rocket className="inline-block w-8 h-8 mr-2" />
             Projects
@@ -35,11 +36,16 @@ export function ProjectsSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of my recent work and personal projects that demonstrate my skills and creativity.
           </p>
-        </div>
+        </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <AnimatedSection 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" 
+          animation="staggerFadeIn" 
+          delay={0.4}
+          stagger={0.2}
+        >
           {projects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:scale-105">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-xl group-hover:text-primary transition-colors">
@@ -65,8 +71,8 @@ export function ProjectsSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </AnimatedSection>
       </div>
-    </section>
+    </AnimatedSection>
   )
 }

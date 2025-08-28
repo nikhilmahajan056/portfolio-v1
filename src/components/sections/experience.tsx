@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Briefcase, Calendar } from "lucide-react"
+import { AnimatedSection } from "@/components/animated-section"
 
 const experiences = [
   {
@@ -49,9 +50,9 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20">
+    <AnimatedSection id="experience" className="py-20" animation="fadeInUp">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <AnimatedSection className="text-center mb-12" animation="fadeInUp" delay={0.2}>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <Briefcase className="inline-block w-8 h-8 mr-2" />
             Work Experience
@@ -59,11 +60,16 @@ export function ExperienceSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             My professional journey and the impact I've made at various organizations.
           </p>
-        </div>
+        </AnimatedSection>
 
-        <div className="flex flex-col items-center space-y-6 max-w-4xl mx-auto">
+        <AnimatedSection 
+          className="flex flex-col items-center space-y-6 max-w-4xl mx-auto" 
+          animation="staggerFadeIn" 
+          delay={0.4}
+          stagger={0.3}
+        >
           {experiences.map((exp, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow w-full">
+            <Card key={index} className="hover:shadow-lg transition-all duration-300 w-full hover:scale-[1.02]">
               <CardHeader>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div>
@@ -98,8 +104,8 @@ export function ExperienceSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </AnimatedSection>
       </div>
-    </section>
+    </AnimatedSection>
   )
 }

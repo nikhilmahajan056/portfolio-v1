@@ -6,10 +6,11 @@ import { ProjectsSection } from "@/components/sections/projects"
 import { EducationSection } from "@/components/sections/education"
 import { ContactSection } from "@/components/sections/contact"
 import { Footer } from "@/components/footer"
+import { PageTransition } from "@/components/page-transition"
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <PageTransition>
       <Navigation />
       <main>
         <HeroSection />
@@ -20,6 +21,6 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-    </div>
+    </PageTransition>
   )
 }
