@@ -7,6 +7,7 @@ import { StructuredData } from "@/components/structured-data";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nikhilmahajan.dev"),
   title: "Nikhil Mahajan - Software Developer & Blockchain Analyst",
   description: "Portfolio of Nikhil Mahajan, a results-driven Software Developer and Blockchain Analyst with 6+ years of experience in software development and IT consulting.",
   keywords: ["developer", "portfolio", "blockchain", "software development", "full stack", "react", "next.js", "solidity", "ethereum", "web3"],
