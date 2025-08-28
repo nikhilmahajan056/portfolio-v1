@@ -41,6 +41,7 @@ export function ContactSection() {
         })
       }
     } catch (error) {
+      console.error(error);
       setSubmitStatus({
         type: 'error',
         message: 'Sorry, there was an error sending your message. Please try again.'

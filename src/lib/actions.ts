@@ -11,7 +11,7 @@ export async function generateLeads(name: string, email: string, subject: string
             "entry.127606658": message,
         });
 
-        const response = await fetch(GOOGLE_FORM_URL, {
+        await fetch(GOOGLE_FORM_URL, {
             method: "POST",
             body: data,
             mode: "no-cors",
